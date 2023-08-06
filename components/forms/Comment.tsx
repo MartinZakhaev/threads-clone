@@ -5,11 +5,9 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
@@ -18,8 +16,8 @@ import { usePathname, useRouter } from "next/navigation";
 import { CommentValidation } from "@/lib/validations/thread";
 import Image from "next/image";
 import { addCommentToThread } from "@/lib/actions/thread.actions";
-// import { createThread } from "@/lib/actions/thread.actions";
-// import { updateUser } from "@/lib/actions/user.actions";
+import { useState } from "react";
+import { BeatLoader } from "react-spinners";
 
 interface Props {
   threadId: string;
@@ -30,6 +28,7 @@ interface Props {
 const Comment = ({ threadId, currentUserImg, currentUserId }: Props) => {
   const router = useRouter();
   const pathname = usePathname();
+  const [isLoading, setIsLoading] = useState(false);
 
   const form = useForm({
     resolver: zodResolver(CommentValidation),
@@ -39,6 +38,7 @@ const Comment = ({ threadId, currentUserImg, currentUserId }: Props) => {
   });
 
   const onSubmit = async (values: z.infer<typeof CommentValidation>) => {
+    setIsLoading(true);
     await addCommentToThread(
       threadId,
       values.thread,
@@ -47,6 +47,7 @@ const Comment = ({ threadId, currentUserImg, currentUserId }: Props) => {
     );
 
     form.reset();
+    setIsLoading(false);
   };
 
   return (
@@ -77,8 +78,8 @@ const Comment = ({ threadId, currentUserImg, currentUserId }: Props) => {
             </FormItem>
           )}
         />
-        <Button type="submit" className="comment-form_btn">
-          Reply
+        <Button disabled={isLoading} type="submit" className="bg-primary-500">
+          {isLoading ? <BeatLoader /> : "Reply"}
         </Button>
       </form>
     </Form>

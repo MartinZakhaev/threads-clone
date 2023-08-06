@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -22,6 +21,7 @@ import { isBase64Image } from "@/lib/utils";
 import { useUploadThing } from "@/lib/uploadthing";
 import { updateUser } from "@/lib/actions/user.actions";
 import { usePathname, useRouter } from "next/navigation";
+import { BeatLoader } from "react-spinners";
 
 interface Props {
   user: {
@@ -40,6 +40,7 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
   const { startUpload } = useUploadThing("media");
   const router = useRouter();
   const pathname = usePathname();
+  const [isLoading, setIsLoading] = useState(false);
 
   const form = useForm({
     resolver: zodResolver(UserValidation),
@@ -70,6 +71,7 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
   };
 
   const onSubmit = async (values: z.infer<typeof UserValidation>) => {
+    setIsLoading(true);
     const blob = values.profile_photo;
     const hasImageChanged = isBase64Image(blob);
     if (hasImageChanged) {
@@ -90,8 +92,10 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
 
     if (pathname === "/profile/edit") {
       router.back();
+      setIsLoading(false);
     } else {
       router.push("/");
+      setIsLoading(false);
     }
   };
 
@@ -200,8 +204,8 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
           )}
         />
 
-        <Button type="submit" className="bg-primary-500">
-          Submit
+        <Button disabled={isLoading} type="submit" className="bg-primary-500">
+          {isLoading ? <BeatLoader /> : "Submit"}
         </Button>
       </form>
     </Form>

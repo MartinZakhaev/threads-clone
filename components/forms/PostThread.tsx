@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -18,7 +17,8 @@ import { useOrganization } from "@clerk/nextjs";
 import { usePathname, useRouter } from "next/navigation";
 import { ThreadValidation } from "@/lib/validations/thread";
 import { createThread } from "@/lib/actions/thread.actions";
-// import { updateUser } from "@/lib/actions/user.actions";
+import { useState } from "react";
+import { BeatLoader } from "react-spinners";
 
 interface Props {
   user: {
@@ -36,6 +36,7 @@ function PostThread({ userId }: { userId: string }) {
   const router = useRouter();
   const pathname = usePathname();
   const { organization } = useOrganization();
+  const [isLoading, setIsLoading] = useState(false);
 
   const form = useForm({
     resolver: zodResolver(ThreadValidation),
@@ -46,14 +47,15 @@ function PostThread({ userId }: { userId: string }) {
   });
 
   const onSubmit = async (values: z.infer<typeof ThreadValidation>) => {
+    setIsLoading(true);
     await createThread({
       text: values.thread,
       author: userId,
       communityId: organization ? organization.id : null,
       path: pathname,
     });
-
     router.push("/");
+    setIsLoading(false);
   };
 
   return (
@@ -77,8 +79,8 @@ function PostThread({ userId }: { userId: string }) {
             </FormItem>
           )}
         />
-        <Button type="submit" className="bg-primary-500">
-          Post Thread
+        <Button disabled={isLoading} type="submit" className="bg-primary-500">
+          {isLoading ? <BeatLoader /> : "Post Thread"}
         </Button>
       </form>
     </Form>

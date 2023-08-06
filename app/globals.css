@@ -32,6 +32,11 @@
     @apply rounded-lg bg-primary-500 px-5 py-1.5 text-small-regular !text-light-1 !important;
   }
 
+  .community-card_btn:hover {
+    filter: brightness(120%); /* Change the icon color when hovering */
+    /* You can adjust the percentage to control the color change intensity */
+  }
+
   /* thread card  */
   .thread-card_bar {
     @apply relative mt-2 w-0.5 grow rounded-full bg-neutral-800;
@@ -48,6 +53,11 @@
 
   .user-card_btn {
     @apply h-auto min-w-[74px] rounded-lg bg-primary-500 text-[12px] text-light-1 !important;
+  }
+
+  .user-card_btn:hover {
+    filter: brightness(120%); /* Change the icon color when hovering */
+    /* You can adjust the percentage to control the color change intensity */
   }
 
   .searchbar {
@@ -80,6 +90,11 @@
 
   .leftsidebar_link {
     @apply relative flex justify-start gap-4 rounded-lg p-4;
+  }
+
+  .leftsidebar_link:hover {
+    background: rgb(135, 126, 255);
+    filter: brightness(120%);
   }
 
   .pagination {
@@ -158,4 +173,25 @@
 
 .comment-form_btn {
   @apply rounded-3xl bg-primary-500 px-8 py-2 !text-small-regular text-light-1 max-xs:w-full !important;
+}
+
+/* CSS for hover styles */
+.thread-heart-icon img:hover {
+  filter: invert(0%) sepia(100%) saturate(800%) hue-rotate(335deg); /* Change the icon color when hovering */
+  /* You can adjust the percentage to control the color change intensity */
+}
+
+.thread-reply-icon img:hover {
+  filter: invert(0%) sepia(100%) saturate(800%) hue-rotate(215deg); /* Change the icon color when hovering */
+  /* You can adjust the percentage to control the color change intensity */
+}
+
+.thread-repost-icon img:hover {
+  filter: invert(0%) sepia(100%) saturate(800%) hue-rotate(100deg); /* Change the icon color when hovering */
+  /* You can adjust the percentage to control the color change intensity */
+}
+
+.thread-share-icon img:hover {
+  filter: invert(0%) sepia(100%) saturate(800%) hue-rotate(185deg); /* Change the icon color when hovering */
+  /* You can adjust the percentage to control the color change intensity */
 }

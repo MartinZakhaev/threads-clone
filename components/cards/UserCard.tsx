@@ -1,8 +1,9 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 interface Props {
   key: string;
@@ -15,6 +16,15 @@ interface Props {
 
 const UserCard = ({ key, id, name, username, imgUrl, personType }: Props) => {
   const router = useRouter();
+  const isCommunity = personType === "Community";
+
+  const handleClick = () => {
+    if (isCommunity) {
+      router.push(`/communities/${id}`);
+    } else {
+      router.push(`/profile/${id}`);
+    }
+  };
 
   return (
     <article className="user-card">
@@ -31,10 +41,7 @@ const UserCard = ({ key, id, name, username, imgUrl, personType }: Props) => {
           <p className="text-small-medium text-gray-1">@{username}</p>
         </div>
       </div>
-      <Button
-        className="user-card_btn"
-        onClick={() => router.push(`/profile/${id}`)}
-      >
+      <Button className="user-card_btn" onClick={handleClick}>
         View
       </Button>
     </article>
