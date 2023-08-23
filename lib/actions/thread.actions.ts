@@ -1,12 +1,12 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-
 import { connectToDB } from "../mongoose";
 
 import User from "../models/user.model";
 import Thread from "../models/thread.model";
 import Community from "../models/community.model";
+import Like from "../models/like.model";
 
 export async function fetchPosts(pageNumber = 1, pageSize = 20) {
   connectToDB();
@@ -240,5 +240,17 @@ export async function addCommentToThread(
   } catch (err) {
     console.error("Error while adding comment:", err);
     throw new Error("Unable to add comment");
+  }
+}
+
+export async function fetchThreadLikesById(threadId: string) {
+  connectToDB();
+
+  try {
+    const likesCount = await Like.countDocuments({ threadId });
+    return likesCount;
+  } catch (error) {
+    console.error("Error fetching thread likes: ", error);
+    throw error;
   }
 }

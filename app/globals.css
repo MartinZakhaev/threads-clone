@@ -195,3 +195,8 @@
   filter: invert(0%) sepia(100%) saturate(800%) hue-rotate(185deg); /* Change the icon color when hovering */
   /* You can adjust the percentage to control the color change intensity */
 }
+
+.custom-delete-confirmation {
+  background-color: #121417;
+  color: #fff;
+}

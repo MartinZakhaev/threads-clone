@@ -18,6 +18,7 @@ import Image from "next/image";
 import { addCommentToThread } from "@/lib/actions/thread.actions";
 import { useState } from "react";
 import { BeatLoader } from "react-spinners";
+import toast from "react-hot-toast";
 
 interface Props {
   threadId: string;
@@ -45,7 +46,7 @@ const Comment = ({ threadId, currentUserImg, currentUserId }: Props) => {
       JSON.parse(currentUserId),
       pathname
     );
-
+    toast.success("Comment successfully posted");
     form.reset();
     setIsLoading(false);
   };

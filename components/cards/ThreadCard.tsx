@@ -1,11 +1,13 @@
-import { fetchAllChildThreads } from "@/lib/actions/thread.actions";
 import { formatDateString } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import DeleteThread from "../forms/DeleteThread";
+import LikeButton from "../shared/LikeButton";
+import { fetchLikesCount } from "@/pages/api/like";
 
 interface Props {
   id: string;
+  loggedInUser: string;
   currentUserId: string;
   parentId: string | null;
   content: string;
@@ -28,8 +30,9 @@ interface Props {
   isComment?: boolean;
 }
 
-const ThreadCard = ({
+const ThreadCard = async ({
   id,
+  loggedInUser,
   currentUserId,
   parentId,
   content,
@@ -40,6 +43,7 @@ const ThreadCard = ({
   isComment,
 }: Props) => {
   const commentCount = comments.length;
+  const likesCount = await fetchLikesCount(id.toString());
 
   return (
     <article
@@ -69,15 +73,26 @@ const ThreadCard = ({
             <p className="mt-2 text-small-regular text-light-2">{content}</p>
             <div className={`${isComment && "mb-10"} mt-5 flex flex-col gap-3`}>
               <div className="flex gap-3.5">
-                <div className="thread-heart-icon">
-                  <Image
-                    src="/assets/heart-gray.svg"
-                    alt="heart"
-                    width={24}
-                    height={24}
-                    className="cursor-pointer object-contain"
-                  />
-                </div>
+                {likesCount > 0 ? (
+                  <div className="flex items-center">
+                    <p className="text-subtle-medium text-gray-1">
+                      {likesCount}
+                    </p>
+                    <div className="thread-heart-icon">
+                      <LikeButton
+                        threadId={id.toString()}
+                        userId={currentUserId.toString()}
+                      />
+                    </div>
+                  </div>
+                ) : (
+                  <div className="thread-heart-icon">
+                    <LikeButton
+                      threadId={id.toString()}
+                      userId={currentUserId.toString()}
+                    />
+                  </div>
+                )}
                 {commentCount > 0 ? ( // Conditional rendering of comment count
                   <Link href={`/thread/${id}`}>
                     <div className="flex items-center">
@@ -139,7 +154,7 @@ const ThreadCard = ({
         </div>
         <DeleteThread
           threadId={JSON.stringify(id)}
-          currentUserId={currentUserId}
+          loggedInUser={currentUserId}
           authorId={author.id}
           parentId={parentId}
           isComment={isComment}

@@ -19,6 +19,7 @@ import { ThreadValidation } from "@/lib/validations/thread";
 import { createThread } from "@/lib/actions/thread.actions";
 import { useState } from "react";
 import { BeatLoader } from "react-spinners";
+import toast from "react-hot-toast";
 
 interface Props {
   user: {
@@ -54,6 +55,7 @@ function PostThread({ userId }: { userId: string }) {
       communityId: organization ? organization.id : null,
       path: pathname,
     });
+    toast.success("Thread created!");
     router.push("/");
     setIsLoading(false);
   };
