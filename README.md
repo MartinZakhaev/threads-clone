@@ -56,23 +56,22 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![image](https://github.com/MartinZakhaev/terra-corner-frontend/assets/78039794/9313d1f8-235c-4193-8293-3078dd36fd1f)
-![image](https://github.com/MartinZakhaev/terra-corner-frontend/assets/78039794/35b334d3-0811-46b2-911a-f2456d7df955)
-![image](https://github.com/MartinZakhaev/terra-corner-frontend/assets/78039794/c30fe5ec-6e2b-42da-bc87-06c49ce057e2)
-![image](https://github.com/MartinZakhaev/terra-corner-frontend/assets/78039794/ac3f17b7-50a1-4728-bc03-ff2fa9eff1b7)
+![image](https://github.com/MartinZakhaev/threads-clone/assets/78039794/56dc4379-0e94-4a60-9b7b-8d0cc5d833e0)
+![image](https://github.com/MartinZakhaev/threads-clone/assets/78039794/79f4431a-d3db-4c1d-a512-337ee4e39421)
+![image](https://github.com/MartinZakhaev/threads-clone/assets/78039794/8378268d-3e88-4374-bb66-9814c52cbf0f)
+![image](https://github.com/MartinZakhaev/threads-clone/assets/78039794/b46ddee6-1a68-4d66-9d6b-d3f3338eeb9e)
 
-Welcome to Terra Corner, a web-based chatting application that aims to connect users through channels and direct messages (DMs). This project focuses on creating an interactive and user-friendly platform where users can communicate, collaborate, and build communities. With Terra Corner, you can create channels, invite other users, and have private conversations with ease.
+Welcome to Terra Threads, a web-based community application designed to foster meaningful discussions and connections. Terra Threads draws inspiration from popular platforms like Thread by Meta, enabling users to create posts, and communities, engage in conversations through comments, and become part of vibrant online communities. Whether you're sharing thoughts, ideas, or passions, Terra Threads provides a space to connect with like-minded individuals.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
 
 * [![React.Js][React.Js]][React-url]
-* [![Node.Js][Node.Js]][Node-url]
-* [![Express][Express.Js]][Express-url]
+* [![Next.Js][Next.Js]][Next-url]
 * [![HTML][HTML5]][HTML-url]
 * [![CSS][CSS3]][CSS-url]
-* [![JS][JavaScript]][JS-url]
+* [![TS][TypeScript]][TS-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -92,7 +91,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Andika Wahyu Syaputra - andikawahyusyaputra@gmail.com
 
-Project Link: https://github.com/MartinZakhaev/terra-corner-frontend
+Project Link: https://github.com/MartinZakhaev/threads-clone
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -106,8 +105,6 @@ I would like to express my gratitude to the following individuals, organizations
 * [Choose an Open Source License](https://choosealicense.com)
 * [Font Awesome](https://fontawesome.com)
 * [React Js](https://react.dev/)
-* [Node Js]( https://nodejs.org/en)
-* [Express Js](https://expressjs.com/)
 * [React Hot Toast](https://react-hot-toast.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -132,4 +129,9 @@ I would like to express my gratitude to the following individuals, organizations
 [CSS-url]: https://developer.mozilla.org/en-US/docs/Web/CSS
 [JavaScript]: https://img.shields.io/badge/JavaScript-20232A?style=for-the-badge&logo=javascript
 [JS-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+[Next.Js]: https://img.shields.io/badge/Next%20Js-20232A?logo=next.js
+[Next-url]: https://nextjs.org/
+[TypeScript]: https://img.shields.io/badge/TypeScript-20232A?logo=typescript
+[TS-url]: https://www.typescriptlang.org/
+ 
 
