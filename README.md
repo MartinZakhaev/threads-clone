@@ -16,10 +16,10 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="https://github.com/MartinZakhaev/terra-corner-frontend/assets/78039794/608f6802-bdeb-454c-a97a-a6a9fbe2ea0b" alt="Logo" width="80" height="80">
+    <img src="https://github.com/MartinZakhaev/threads-clone/assets/78039794/58044c43-cfeb-4d68-82c1-7a0956da3dce" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">TERRA CORNER</h3>
+  <h3 align="center">TERRA THREADS</h3>
 
   <p align="center">
     An awesome README template to jumpstart your projects!
