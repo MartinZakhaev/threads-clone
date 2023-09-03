@@ -22,7 +22,7 @@
   <h3 align="center">TERRA THREADS</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    Stitching Together Communities
     <br />
     <br />
     <a href="https://threads-clone-kappa.vercel.app/sign-in">View Demo</a>
