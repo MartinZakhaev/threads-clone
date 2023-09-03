@@ -129,9 +129,9 @@ I would like to express my gratitude to the following individuals, organizations
 [CSS-url]: https://developer.mozilla.org/en-US/docs/Web/CSS
 [JavaScript]: https://img.shields.io/badge/JavaScript-20232A?style=for-the-badge&logo=javascript
 [JS-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
-[Next.Js]: https://img.shields.io/badge/Next%20Js-20232A?logo=next.js
+[Next.Js]: https://img.shields.io/badge/Next%20Js-20232A?style=for-the-badge&logo=next.js
 [Next-url]: https://nextjs.org/
-[TypeScript]: https://img.shields.io/badge/TypeScript-20232A?logo=typescript
+[TypeScript]: https://img.shields.io/badge/TypeScript-20232A?style=for-the-badge&logo=typescript
 [TS-url]: https://www.typescriptlang.org/
  
 
