@@ -16,7 +16,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="https://github.com/MartinZakhaev/threads-clone/assets/78039794/58044c43-cfeb-4d68-82c1-7a0956da3dce" alt="Logo" width="80" height="80">
+    <img src="https://github.com/MartinZakhaev/threads-clone/assets/78039794/58044c43-cfeb-4d68-82c1-7a0956da3dce" alt="Logo" width="80" height="160">
   </a>
 
   <h3 align="center">TERRA THREADS</h3>
