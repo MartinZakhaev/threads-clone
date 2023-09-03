@@ -25,11 +25,11 @@
     An awesome README template to jumpstart your projects!
     <br />
     <br />
-    <a href="https://terra-corner.vercel.app/">View Demo</a>
+    <a href="https://threads-clone-kappa.vercel.app/sign-in">View Demo</a>
     ·
-    <a href="https://github.com/MartinZakhaev/terra-corner-frontend/issues">Report Bug</a>
+    <a href="https://github.com/MartinZakhaev/threads-clone/issues">Report Bug</a>
     ·
-    <a href="https://github.com/MartinZakhaev/terra-corner-frontend/issues">Request Feature</a>
+    <a href="https://github.com/MartinZakhaev/threads-clone/issues">Request Feature</a>
   </p>
 </div>
 
